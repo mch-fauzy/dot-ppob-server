@@ -17,6 +17,13 @@ const CONFIG = {
     API_SECRET: process.env.CLOUDINARY_API_SECRET,
     IMAGE_STORAGE_DIRECTORY: process.env.CLOUDINARY_IMAGE_STORAGE_DIRECTORY,
   },
+  AXIOS: {
+    URL: process.env.AXIOS_URL,
+    TIMEOUT: process.env.AXIOS_TIMEOUT,
+  },
+  REDIS: {
+    URL: process.env.REDIS_URL,
+  },
 };
 
 export {CONFIG};
