@@ -21,7 +21,7 @@
             "name": "Transaction"
         },
         {
-          "name": "JSON Placwholder"
+          "name": "JSON Placeholder"
       }
     ],
     "paths": {
@@ -61,7 +61,7 @@
         "/v1/login": {
             "post": {
                 "tags": [
-                    "Membership"
+                    "User Membership"
                 ],
                 "summary": "Login into server",
                 "operationId": "login",
@@ -94,7 +94,7 @@
         "/v1/profile": {
             "get": {
                 "tags": [
-                    "Membership"
+                    "User Membership"
                 ],
                 "summary": "Get profile for current user",
                 "operationId": "getProfileForCurrentUser",
@@ -122,7 +122,7 @@
         "/v1/profile/update": {
             "patch": {
                 "tags": [
-                    "Membership"
+                    "User Membership"
                 ],
                 "summary": "Update profile for current user",
                 "operationId": "updateProfileForCurrentUser",
@@ -163,7 +163,7 @@
         "/v1/profile/image": {
             "patch": {
                 "tags": [
-                    "Membership"
+                    "User Membership"
                 ],
                 "summary": "Update profile image for current user",
                 "operationId": "updateProfileImageCloudinaryForCurrentUser",
