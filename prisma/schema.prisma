@@ -1,0 +1,68 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model DotUsers {
+  id           String    @id @default(uuid()) @db.Text
+  email        String    @unique @db.Text
+  password     String    @db.Text
+  firstName    String    @map("first_name") @db.Text
+  lastName     String    @map("last_name") @db.Text
+  profileImage String?   @map("profile_image") @db.Text
+  balance      Float     @default(0) @db.DoublePrecision
+  createdAt    DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  createdBy    String?   @map("created_by") @db.Text // map field name from "createdBy" to "created_by" in db
+  updatedAt    DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
+  updatedBy    String?   @map("updated_by") @db.Text
+  deletedAt    DateTime? @map("deleted_at") @db.Timestamptz(3)
+  deletedBy    String?   @map("deleted_by") @db.Text
+
+  transactions DotTransactions[]
+
+  @@index([deletedAt])
+  @@map("dot_users") // map model name "DotUsers" to "dot_users" in db
+}
+
+model DotServices {
+  id            Int       @id @default(autoincrement()) @db.Integer
+  serviceCode   String    @unique @map("service_code") @db.Text
+  serviceName   String    @map("service_name") @db.Text
+  serviceTariff Float     @map("service_tariff") @db.DoublePrecision
+  createdAt     DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  createdBy     String?   @map("created_by") @db.Text
+  updatedAt     DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
+  updatedBy     String?   @map("updated_by") @db.Text
+  deletedAt     DateTime? @map("deleted_at") @db.Timestamptz(3)
+  deletedBy     String?   @map("deleted_by") @db.Text
+
+  transactions DotTransactions[]
+
+  @@index([deletedAt])
+  @@map("dot_services")
+}
+
+model DotTransactions {
+  id              Int       @id @default(autoincrement()) @db.Integer
+  userId          String    @map("user_id") @db.Text
+  serviceId       Int?      @map("service_id") @db.Integer
+  transactionType String    @map("transaction_type") @db.Text
+  totalAmount     Float     @map("total_amount") @db.DoublePrecision
+  invoiceNumber   String    @map("invoice_number") @db.Text
+  createdAt       DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  createdBy       String?   @map("created_by") @db.Text
+  updatedAt       DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
+  updatedBy       String?   @map("updated_by") @db.Text
+  deletedAt       DateTime? @map("deleted_at") @db.Timestamptz(3)
+  deletedBy       String?   @map("deleted_by") @db.Text
+
+  user    DotUsers     @relation(fields: [userId], references: [id])
+  service DotServices? @relation(fields: [serviceId], references: [id])
+
+  @@index([userId, serviceId, transactionType, createdAt, invoiceNumber])
+  @@map("dot_transactions")
+}

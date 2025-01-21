@@ -1,0 +1,20 @@
+{
+  "extends": "./node_modules/gts/tsconfig-google.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "build",
+    "esModuleInterop": true, // Allows TypeScript to use default imports from modules that are exported using CommonJS syntax
+    "resolveJsonModule": true // Allows TypeScript to import JSON files as modules
+  },
+  /**
+   * "**": Matches any folder recursively, starting from the directory where file is located
+   * "*.ts": Matches all TypeScript files with the .ts extension
+  */
+  "include": [
+    "**/*.ts", // Include all TypeScript files
+    "docs/*.json" // Include all JSON files in docs directory
+  ],
+  "exclude": [
+    "build"
+  ]
+}
