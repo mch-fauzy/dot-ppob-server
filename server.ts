@@ -9,6 +9,7 @@ import {router} from './routes';
 import {logInfo} from './utils/logger';
 import {handleError} from './utils/error-handler';
 import {prismaClient} from './configs/prisma-client';
+import {redis} from './configs/redis';
 
 /** Initialize Express application */
 const app = express();
@@ -28,11 +29,19 @@ const pingDatabase = async (): Promise<void> => {
   logInfo('Connected to Database');
 };
 
+const pingRedis = async () => {
+  await redis.ping();
+  logInfo('Connected to Redis');
+};
+
 /** Function to start the server */
 const startServer = async (): Promise<void> => {
   try {
     /** Wait for database connection */
     await pingDatabase();
+
+    /** Wait for Redis connection */
+    await pingRedis();
 
     /** Create an HTTP server instance from the Express app */
     const server = createServer(app);
