@@ -2,7 +2,6 @@
     "openapi": "3.0.3",
     "info": {
         "title": "DOT PPOB Server",
-        "description": "Backend server built with NodeJS and Postgresql for managing users and transactions",
         "version": "1.0.0"
     },
     "servers": [
@@ -353,7 +352,7 @@
         "/v1/posts": {
             "get": {
                 "tags": [
-                    "JSON Placwholder"
+                    "JSON Placeholder"
                 ],
                 "summary": "Get all posts information",
                 "operationId": "viewAllPosts",
@@ -374,7 +373,7 @@
             },
             "post": {
                 "tags": [
-                    "JSON Placwholder"
+                    "JSON Placeholder"
                 ],
                 "summary": "Add a post",
                 "operationId": "create",
@@ -404,7 +403,7 @@
         "/v1/posts/{id}": {
             "get": {
                 "tags": [
-                    "JSON Placwholder"
+                    "JSON Placeholder"
                 ],
                 "summary": "Get a post information",
                 "operationId": "getById",
@@ -433,7 +432,7 @@
             },
             "put": {
                 "tags": [
-                    "JSON Placwholder"
+                    "JSON Placeholder"
                 ],
                 "summary": "Edit post information by ID",
                 "operationId": "updateById",
@@ -475,7 +474,7 @@
             },
             "patch": {
                 "tags": [
-                    "JSON Placwholder"
+                    "JSON Placeholder"
                 ],
                 "summary": "Partial edit post information by ID",
                 "operationId": "partialUpdateById",
@@ -517,7 +516,7 @@
             },
             "delete": {
                 "tags": [
-                    "JSON Placwholder"
+                    "JSON Placeholder"
                 ],
                 "summary": "remove a post record by ID",
                 "operationId": "deleteById",
