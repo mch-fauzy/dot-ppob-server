@@ -1,24 +1,16 @@
 # DOT PPOB
 [![Code Style: Google](https://img.shields.io/badge/code%20style-google-blueviolet.svg)](https://github.com/google/gts)
 
-Backend server built with NodeJS and Postgresql for managing users, services, and transactions. The project provides functionality to manage users information, services, as well as handle transactions. It also includes database migrations and seeding to quickly set up the system
-
 Live demo [_here_](https://dot-ppob-server.vercel.app/)
 
 ## Table of Contents
 * [Technologies Used](#technologies-used)
-* [Features](#features)
 * [Setup](#setup)
 
 ## Technologies Used
 - NodeJS - version 20.11.1
 - Postgresql - version 14.13.0
 - Cloudinary for Cloud Storage
-
-## Features
-- Users Management
-- Services and Banners Information
-- Transactions Handling
 
 ## Setup
 To run this project in local, follow the steps below:
