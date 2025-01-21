@@ -3,6 +3,7 @@ import swaggerUi from 'swagger-ui-express';
 
 import {membershipRouterV1} from './v1/membership-route';
 import {transactionRouterV1} from './v1/transaction-route';
+import {jsonPlaceholderPostRouterV1} from './v1/externals/json-placeholder-post-route';
 import {CONFIG} from '../configs/config';
 import swaggerDocument from '../docs/swagger.json';
 import {logInfo} from '../utils/logger';
@@ -19,6 +20,10 @@ const routes = [
   {
     path: '/v1',
     route: transactionRouterV1,
+  },
+  {
+    path: '/v1',
+    route: jsonPlaceholderPostRouterV1,
   },
 ];
 
