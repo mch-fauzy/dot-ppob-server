@@ -494,7 +494,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/editPost"
+                                "$ref": "#/components/schemas/post"
                             }
                         }
                     }
