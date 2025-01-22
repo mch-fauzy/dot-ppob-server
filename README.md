@@ -11,6 +11,7 @@ Live demo [_here_](https://dot-ppob-server.vercel.app/)
 - NodeJS - version 20.11.1
 - Postgresql - version 14.13.0
 - Cloudinary for Cloud Storage
+- Redis
 
 ## Setup
 To run this project in local, follow the steps below:
